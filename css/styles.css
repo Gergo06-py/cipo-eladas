@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    background: url('../pics/bg-box.png') no-repeat center center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.text {
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#ad-1, #ad-2, #buy {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#title1, #title2 {
+    background-color: gray;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-100%) translateX(-50%);
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+#title1 {
+    color: greenyellow;
+    animation: title 4s 2s;
+}
+
+#title2 {
+    color: palevioletred;
+    animation: title 4s 12s;
+}
+
+#shoe1, #shoe2 {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: -300px;
+    transform: translate(-50%, -50%);
+}
+
+#shoe1 {
+    animation: shoe 8s;
+}
+
+#shoe2 {
+    animation: shoe 8s 10s;
+}
+
+#buy {
+    position: absolute;
+    top: -100%;
+    animation: buy 4s 18s forwards;
+}
+
+#buy-btn {
+    color: greenyellow;
+    text-transform: uppercase;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 50px;
+    animation: btn-float 2s;
+    animation: btn-blink 1.5s 22s linear infinite;
+}
+
+/** Animation */
+
+@keyframes title {
+    0% {
+        transform: translateY(-100%) translateX(-50%);
+    }
+
+    40%, 60% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    100% {
+        transform: translateY(-100%) translateX(-50%);
+    }
+}
+
+@keyframes shoe {
+    0% {
+        left: -150px;
+    }
+
+    40%, 60% {
+        left: 50%;
+    }
+
+    100% {
+        left: calc(100% + 150px);
+    }
+}
+
+@keyframes buy {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes btn-blink {
+    0% {
+        background-color: grey;
+        color: greenyellow;
+    }
+
+    40%, 60% {
+        background-color: greenyellow;
+        color: grey;
+    }
+
+    100% {
+        background-color: grey;
+        color: greenyellow;
+    }
+}
